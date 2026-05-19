@@ -125,11 +125,7 @@ mvn clean install -DskipTests
 ### Passo 3: Iniciar as Aplicações
 Você pode iniciar os microsserviços diretamente pela sua IDE (IntelliJ, Eclipse ou VS Code) executando as classes principais correspondentes, ou via terminal executando os comandos em abas separadas:
 
-# Executar o Order Service
-mvn -pl order-service spring-boot:run
-```
 
----
 
 ## 📊 Observabilidade na Prática
 
