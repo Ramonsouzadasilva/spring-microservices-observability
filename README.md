@@ -1,4 +1,4 @@
-# 🚀 Plataforma de Microsserviços v2
+# 🚀 Plataforma de Microsserviços 
 
 Uma arquitetura de microsserviços moderna baseada em Java 21 e Spring Boot 3.5, desenvolvida para fins de estudo e prática avançada em arquitetura de sistemas distribuídos.
 
