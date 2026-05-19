@@ -117,14 +117,10 @@ docker-compose up -d
 *Isso iniciará o Banco de Dados, Redis, RabbitMQ, Jaeger e o painel do Grafana em segundo plano.*
 
 ### Passo 2: Compilar os Microsserviços
-Na pasta raiz do projeto, execute a compilação Maven:
-```bash
-mvn clean install -DskipTests
-```
+
 
 ### Passo 3: Iniciar as Aplicações
 Você pode iniciar os microsserviços diretamente pela sua IDE (IntelliJ, Eclipse ou VS Code) executando as classes principais correspondentes, ou via terminal executando os comandos em abas separadas:
-
 
 
 ## 📊 Observabilidade na Prática
