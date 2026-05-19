@@ -1,6 +1,8 @@
 # 🚀 Plataforma de Microsserviços v2
 
-Uma arquitetura de microsserviços robusta e moderna construída com **Java 21** e o ecossistema **Spring Boot 3.5**. Este projeto foi desenhado utilizando as melhores práticas de microsserviços para criar um sistema de alta performance, seguro, resiliente e altamente observável.
+Uma arquitetura de microsserviços moderna baseada em Java 21 e Spring Boot 3.5, desenvolvida para fins de estudo e prática avançada em arquitetura de sistemas distribuídos.
+
+O projeto simula um ambiente de produção e tem como objetivo explorar boas práticas de engenharia de software, incluindo performance, segurança, resiliência e observabilidade, aplicadas em uma arquitetura cloud-native.
 
 ---
 
