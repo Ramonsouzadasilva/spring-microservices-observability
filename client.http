@@ -1,0 +1,44 @@
+### Variáveis Base
+@baseUrl = http://localhost:8080
+@email = teste2@email.com
+@password = 123
+
+# ATENÇÃO: Após rodar o Login, copie o token retornado e cole aqui:
+@authToken = eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZThkZDAxNS03MTdlLTQyMGEtOWFjZS0zMTI1ZGMwY2Q4OWIiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc3OTIyNzkyNywiZXhwIjoxNzc5MjMxNTI3fQ.Ca-1Ucev3zjI697GCbEd-neKi5pweQOPAWj8rl6Ws16mgssUPjOKVo0JWRjS306TdUvw4vC9Ba3CS1GllVbJVQ
+# Gera um UUID aleatório para usar no pedido (suportado no VS Code REST Client e IntelliJ)
+@idempotencyKey = {{$random.uuid}}
+
+### 1. Registrar Usuário
+POST {{baseUrl}}/auth/register
+Content-Type: application/json
+
+{
+  "name": "Usuário Teste 2",
+  "email": "{{email}}",
+  "password": "{{password}}"
+}
+
+### 2. Fazer Login
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "{{email}}",
+  "password": "{{password}}"
+}
+
+### 3. Buscar Perfil (Testa Roteamento Protegido)
+GET {{baseUrl}}/users/me
+Authorization: Bearer {{authToken}}
+
+### 4. Criar Pedido (Testa Idempotência e RabbitMQ)
+# DICA: Para testar a Idempotência, troque o {{idempotencyKey}} abaixo por um UUID fixo 
+# como "12345-abc" e rode duas vezes! A segunda vez não irá gerar evento no RabbitMQ.
+POST {{baseUrl}}/orders
+Authorization: Bearer {{authToken}}
+Idempotency-Key: {abc-123}
+Content-Type: application/json
+
+{
+  "total": 199.90
+}
